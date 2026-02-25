@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Dangerous Salad</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">DS</div>
+
+      <ul class="nav-links">
+        <li><a href="#hero">Kezdőlap</a></li>
+        <li><a href="#projects">Projektek</a></li>
+        <li><a href="#skills">Készségek</a></li>
+        <li><a href="#contact">Kapcsolat</a></li>
+      </ul>
+
+      <div class="hamburger">☰</div>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero">
+    <h1>Dangerous Salad</h1>
+    <h2>Frontend Developer</h2>
+    <p>Tiszta kód. Modern design. Kreatív megoldások.</p>
+    <a href="#projects" class="btn">Projektjeim</a>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects">
+    <h2>Projektjeim</h2>
+
+    <div class="project-container">
+
+      <div class="card">
+        <h3>Todo App</h3>
+        <p>Egyszerű feladatkezelő alkalmazás JavaScript segítségével.</p>
+        <a href="#">Megnézem</a>
+      </div>
+
+      <div class="card">
+        <h3>Landing Page</h3>
+        <p>Reszponzív marketing oldal modern CSS Grid használatával.</p>
+        <a href="#">Megnézem</a>
+      </div>
+
+      <div class="card">
+        <h3>Kalkulátor</h3>
+        <p>Interaktív számológép DOM manipulációval.</p>
+        <a href="#">Megnézem</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills">
+    <h2>Készségek</h2>
+
+    <div class="skill">
+      <p>HTML</p>
+      <div class="bar"><div class="progress" style="width:90%"></div></div>
+    </div>
+
+    <div class="skill">
+      <p>CSS</p>
+      <div class="bar"><div class="progress" style="width:80%"></div></div>
+    </div>
+
+    <div class="skill">
+      <p>JavaScript</p>
+      <div class="bar"><div class="progress" style="width:70%"></div></div>
+    </div>
+
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <h2>Kapcsolat</h2>
+
+    <form id="contact-form">
+      <input type="text" placeholder="Név" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Üzenet" required></textarea>
+      <button type="submit" class="btn">Küldés</button>
+    </form>
+
+    <p id="success-message"></p>
+  </section>
+
+  <footer>
+    <p>© 2026 Dangerous Salad</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+/* ===== ROOT VARIABLES ===== */
+:root {
+  --primary: #2563eb;
+  --dark: #1e293b;
+  --light: #f8fafc;
+  --accent: #f59e0b;
+  --radius: 12px;
+}
+
+/* ===== GLOBAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 2rem;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: white;
+  position: sticky;
+  top: 0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark);
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ===== HERO ===== */
+#hero {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+/* ===== PROJECTS ===== */
+.project-container {
+  display: grid;
+  gap: 2rem;
+}
+
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Grid */
+@media (min-width: 768px) {
+  .project-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ===== SKILLS ===== */
+.skill {
+  max-width: 500px;
+  margin: 1rem auto;
+  text-align: left;
+}
+
+.bar {
+  background: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 10px;
+  background: var(--primary);
+}
+
+/* ===== CONTACT ===== */
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input, textarea {
+  padding: 0.8rem;
+  border-radius: var(--radius);
+  border: 1px solid #ccc;
+}
+
+footer {
+  background: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* ===== MOBILE MENU ===== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: white;
+    padding: 1rem;
+    border-radius: var(--radius);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+// ===== HAMBURGER MENU =====
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+
+// ===== SCROLL ANIMATION =====
+const cards = document.querySelectorAll(".card");
+
+window.addEventListener("scroll", () => {
+  cards.forEach(card => {
+    const cardTop = card.getBoundingClientRect().top;
+    if (cardTop < window.innerHeight - 100) {
+      card.classList.add("show");
+    }
+  });
+});
+
+// ===== FORM VALIDATION =====
+const form = document.getElementById("contact-form");
+const message = document.getElementById("success-message");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  message.textContent = "Üzenet elküldve!";
+  message.style.color = "green";
+  form.reset();
+});
