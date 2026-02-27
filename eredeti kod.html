@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Dangerous Salad</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">DS</div>
+
+      <ul class="nav-links">
+        <li><a href="#hero">Kezdőlap</a></li>
+        <li><a href="#projects">Projektek</a></li>
+        <li><a href="#skills">Készségek</a></li>
+        <li><a href="#contact">Kapcsolat</a></li>
+      </ul>
+
+      <div class="hamburger">☰</div>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero">
+    <h1>Dangerous Salad</h1>
+    <h2>Frontend Developer</h2>
+    <p>Tiszta kód. Modern design. Kreatív megoldások.</p>
+    <a href="#projects" class="btn">Projektjeim</a>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects">
+    <h2>Projektjeim</h2>
+
+    <div class="project-container">
+
+      <div class="card">
+        <h3>Todo App</h3>
+        <p>Egyszerű feladatkezelő alkalmazás JavaScript segítségével.</p>
+        <a href="#">Megnézem</a>
+      </div>
+
+      <div class="card">
+        <h3>Landing Page</h3>
+        <p>Reszponzív marketing oldal modern CSS Grid használatával.</p>
+        <a href="#">Megnézem</a>
+      </div>
+
+      <div class="card">
+        <h3>Kalkulátor</h3>
+        <p>Interaktív számológép DOM manipulációval.</p>
+        <a href="#">Megnézem</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills">
+    <h2>Készségek</h2>
+
+    <div class="skill">
+      <p>HTML</p>
+      <div class="bar"><div class="progress" style="width:90%"></div></div>
+    </div>
+
+    <div class="skill">
+      <p>CSS</p>
+      <div class="bar"><div class="progress" style="width:80%"></div></div>
+    </div>
+
+    <div class="skill">
+      <p>JavaScript</p>
+      <div class="bar"><div class="progress" style="width:70%"></div></div>
+    </div>
+
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <h2>Kapcsolat</h2>
+
+    <form id="contact-form">
+      <input type="text" placeholder="Név" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Üzenet" required></textarea>
+      <button type="submit" class="btn">Küldés</button>
+    </form>
+
+    <p id="success-message"></p>
+  </section>
+
+  <footer>
+    <p>© 2026 Dangerous Salad</p>
+    <p><a href="">Vissza</a></p>
+  </footer>
+
+  <script src="script2.js"></script>
+</body>
+</html>
