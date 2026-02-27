@@ -76,6 +76,16 @@ h2 {
   margin-top: 1rem;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
+.kicsinyites{
+  max-width: 50%;
+  margin: 20px auto 0 auto;
+  min-width: 150px;
+}
+
 /* ===== PROJECTS ===== */
 .project-container {
   display: grid;
@@ -118,6 +128,12 @@ h2 {
   text-align: left;
 }
 
+.skill span{
+  font-size: 1.5rem;
+  font-family:monospace;
+  letter-spacing: 2.5px;
+}
+
 .bar {
   background: #ddd;
   border-radius: 20px;
@@ -143,8 +159,15 @@ input, textarea {
   border-radius: var(--radius);
   border: 1px solid #ccc;
 }
+textarea{
+  min-width: 50%;
+  max-width: 500px;
+  min-height: 100px;
+}
 
+/* ===== FOOTER ===== */
 footer {
+  border-top: 1px solid rgb(208, 208, 208);
   background: white;
   padding: 1rem;
   text-align: center;
