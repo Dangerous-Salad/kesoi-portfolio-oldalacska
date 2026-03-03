@@ -46,8 +46,8 @@ const eztinditsd = document.getElementById("eztinditsd")
 const stopandgo = document.getElementById("stopandgo")
 const skipEl = document.getElementById("skip")
 const pause = document.getElementById("pause")
-/* eztinditsd.src = muzikValasztasok[Math.floor(Math.random()*7)]
-console.log(eztinditsd.src) */
+eztinditsd.src = muzikValasztasok[Math.floor(Math.random()*7)]
+//console.log(eztinditsd.getAttribute("src"))
 
 function play(){
   if (eztinditsd.paused) {
@@ -60,17 +60,18 @@ function play(){
 }
 
 
+//muzikValasztasok.indexOf(eztinditsd.getAttribute("src"))
 /* console.log(muzikValasztasok.findIndex((plsmukodj) => {return plsmukodj === eztinditsd.src} )) */
 function skip(){
   /* console.log(muzikValasztasok.indexOf(eztinditsd.getAttribute("src"))) */
   if (muzikValasztasok.indexOf(eztinditsd.getAttribute("src")) + 1 === muzikValasztasok.length) {
     eztinditsd.src = muzikValasztasok[0]
-    stopandgo.src = "play-solid-full.svg"
-    eztinditsd.pause()
+    stopandgo.src = "pause-solid-full.svg"
+    eztinditsd.play()
   } else {
     eztinditsd.src = muzikValasztasok[muzikValasztasok.indexOf(eztinditsd.getAttribute("src")) + 1]
-    stopandgo.src = "play-solid-full.svg"
-    eztinditsd.pause()
+    stopandgo.src = "pause-solid-full.svg"
+    eztinditsd.play()
   }
   
 }
