@@ -31,14 +31,19 @@ h2 {
 }
 
 /* ===== NAVBAR ===== */
+
+header{
+  position: sticky;
+  top: 0;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   background: white;
-  position: sticky;
-  top: 0;
+  
 }
 
 .nav-links {
